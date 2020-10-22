@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# loops from 1 to 10 but with a condition.
 i=0
 while [ $i -lt 10 ];
 do
