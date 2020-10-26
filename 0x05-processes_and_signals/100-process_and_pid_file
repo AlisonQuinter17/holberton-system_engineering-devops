@@ -4,6 +4,7 @@
 # trap = Receive and capture signals.
 # SIGTERM (15): Kills the process allowing it to finish successfully.
 # SIGINT (2): Interrupt with (Ctrl-C).
+# SIGQUIT (3): Interrupt with (Ctrl-\).
 echo $$ > /var/run/holbertonscript.pid
 trap "echo I hate the kill command; rm /var/run/holbertonscript.pid; exit" SIGTERM
 trap "echo Y U no love me?!" SIGINT
