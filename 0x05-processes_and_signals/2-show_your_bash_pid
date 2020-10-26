@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# ps = Displays lines containing the bash word.
+# shellcheck disable=SC2009
+# grep - Searches for the specified word or pattern
+# and the line or lines that contain it are printed.
+ps auxf | grep bash
