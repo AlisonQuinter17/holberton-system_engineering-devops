@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Kills 7-highlander process.
+# pkill/killall = Terminate running processes based
+# on their names and other attributes.
+# -f = When -f is set, the full command line is used.
+# -SIGKILL(9) = Kill signal.
+pkill -f -SIGKILL 7-highlander
