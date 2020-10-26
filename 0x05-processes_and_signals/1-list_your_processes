@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# ps = Displays a list of currently running processes.
+# a = Show processes for all users.
+# u = Display the process's user/owner.
+# x = Show processes not attached to a terminal.
+# f = Show process hierarchy.
+ps auxf
