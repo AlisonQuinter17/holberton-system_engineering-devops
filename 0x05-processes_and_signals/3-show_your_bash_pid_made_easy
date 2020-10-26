@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# pgrep = Allows you to find the process IDs of a
+# running program based on given criteria.
+# -l = List PID and process name.
+pgrep -l bash
