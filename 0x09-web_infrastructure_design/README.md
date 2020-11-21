@@ -11,6 +11,5 @@ A lot of websites are powered by simple web infrastructure, a lot of time it is 
 - 1 database (MySQL)
 - 1 domain name foobar.com configured with a www record that points to your server IP 8.8.8.8
 
-<img src="https://github.com/AlisonQuinter17/holberton-system_engineering-devops/0x09-web_infrastructure_design/master/markdown_multimedia/simple_web_desing.gif" class="responsive"/>
+<img src="https://github.com/AlisonQuinter17/holberton-system_engineering-devops/tree/master/0x09-web_infrastructure_design/markdown_multimedia/simple_web_desing.gif" class="responsive"/>
 
-<img src="https://github.com/AlisonQuinter17/AirBnB_clone/blob/main/multimedia/console.gif" class="responsive"/>
