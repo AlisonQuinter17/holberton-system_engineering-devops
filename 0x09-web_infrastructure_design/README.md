@@ -24,4 +24,14 @@ Desing three server web infrastructure that hosts the website www.foobar.com.
 - 1 set of application files (your code base)
 - 1 database (MySQL)
 
-<img src="https://github.com/AlisonQuinter17/holberton-system_engineering-devops/blob/master/0x09-web_infrastructure_design/markdown_multimedia/distributed.gif" class="responsive"/>
+<img src="https://github.com/AlisonQuinter17/holberton-system_engineering-devops/blob/master/0x09-web_infrastructure_design/markdown_multimedia/distributed_web_infraestructure.gif" class="responsive"/>
+
+## Secured and monitored web infrastructure
+Design a three server web infrastructure that hosts the website www.foobar.com, it must be secured, serve encrypted traffic, and be monitored.
+
+### Contains:
+- 3 firewalls
+- 1 SSL certificate to serve www.foobar.com over HTTPS
+- 3 monitoring clients (data collector for Sumologic or other monitoring services)
+
+<img src="https://github.com/AlisonQuinter17/holberton-system_engineering-devops/blob/master/0x09-web_infrastructure_design/markdown_multimedia/secured_and_monitored_web_infrastructure.gif" class="responsive"/>
