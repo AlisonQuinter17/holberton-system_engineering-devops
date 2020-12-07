@@ -1,4 +1,5 @@
 # Execute a command
-exec { 'pkill killmenow':
-  path   => '/usr/bin'
+exec { 'killmenow':
+  command => 'pkill',
+  path    => '/usr/bin'
 }
