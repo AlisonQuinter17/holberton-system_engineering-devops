@@ -1,0 +1,2 @@
+# Use a private key to connect to your server.
+ssh -i ~/.ssh/holberton ubuntu@35.237.27.173
