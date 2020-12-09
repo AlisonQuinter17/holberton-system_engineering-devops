@@ -1,0 +1,2 @@
+# Create an SSH key pair
+ssh-keygen -f holberton -t rsa -N betty -b 4096
