@@ -1,1 +1,11 @@
-# Configure your Nginx server to have a custom 404 page
+#!/usr/bin/env bash
+# Not found page 404
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+ns="\\\trewrite ^/redirect_me https://media.giphy.com/media/wW95fEq09hOI8/giphy.gif permanent;"
+sudo sed -i "42i $ns" /etc/nginx/sites-available/default
+str="\\\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t}\n"
+sudo sed -i "44i $str" /etc/nginx/sites-available/default
+sudo service nginx start
