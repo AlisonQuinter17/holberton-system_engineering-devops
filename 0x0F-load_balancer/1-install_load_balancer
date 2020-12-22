@@ -4,12 +4,12 @@ FOO="\
 frontend load_balancer
     bind *:80
     mode http
-    default_backend foo
+    default_backend webservers
     
-backend foo
+backend webservers
     balance roundrobin
-    server foo1 35.237.27.173:80 check
-    server foo2 35.231.241.190:80 check
+    server 1559-web-01 35.237.27.173:80 check
+    server 1559-web-02 35.231.241.190:80 check
 "
 apt-get -y install software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.0
