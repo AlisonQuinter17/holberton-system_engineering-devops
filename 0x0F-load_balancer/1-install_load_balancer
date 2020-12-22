@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install my load balancer
 balancer="\
-frontend load_balancer
+frontend haproxy_balancer
     bind *:80
     mode http
     default_backend webservers
