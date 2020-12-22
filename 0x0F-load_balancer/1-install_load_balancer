@@ -4,16 +4,16 @@ FOO="\
 frontend load_balancer
     bind *:80
     mode http
-    default_backend webservers
+    default_backend foo
     
-backend webservers
+backend foo
     balance roundrobin
-    server 1559-web-01 35.237.27.173:80 check
-    server 1559-web-02 35.231.241.190:80 check
+    server foo1 35.237.27.173:80 check
+    server foo2 35.231.241.190:80 check
 "
-sudo apt-get -y update
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:vbernat/haproxy-1.6
-sudo apt-get install haproxy=1.6.\*
+apt-get -y install software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.0
+apt-get -y update
+apt-get -y install haproxy=2.0.\*
 echo "$FOO" >> /etc/haproxy/haproxy.cfg
-sudo service haproxy restart
+service haproxy restart
