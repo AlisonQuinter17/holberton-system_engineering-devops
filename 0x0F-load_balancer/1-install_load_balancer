@@ -12,8 +12,8 @@ frontend haproxy_balancer
     
 backend load_balancer
     balance roundrobin
-    server 1559-web-01 check
-    server 1559-web-02 check
+    server num1 35.237.27.173:80 check
+    server num2 35.231.241.190:80 check
 "
 echo "$balancer" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
