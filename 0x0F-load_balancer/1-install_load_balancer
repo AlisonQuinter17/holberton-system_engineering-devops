@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Install my load balancer
-FOO="\
+balancer="\
 frontend load_balancer
     bind *:80
     mode http
@@ -15,5 +15,5 @@ apt-get -y install software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.0
 apt-get -y update
 apt-get -y install haproxy=2.0.\*
-echo "$FOO" >> /etc/haproxy/haproxy.cfg
+echo "$balancer" >> /etc/haproxy/haproxy.cfg
 service haproxy restart
