@@ -15,10 +15,11 @@ if __name__ == "__main__":
 	total_tasks = 0
 
 	for status in todos:
-		if user_id == status.get('userId') and status.get('completed') is True:
-			done_tasks += 1
-			tasks.append(status.get('title'))
-		total_tasks += 1
+		if user_id == status.get('userId'):
+			if status.get('completed') is True:
+				done_tasks += 1
+				tasks.append(status.get('title'))
+			total_tasks += 1
 	print("Employee {} is done with tasks({}/{}):"
 		.format(user_name, done_tasks, total_tasks))
 
