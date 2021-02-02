@@ -12,7 +12,8 @@ if __name__ == "__main__":
     to_dict = {u.get('id'): [{"task": t.get('title'),
                               "completed": t.get('completed'),
                               "username": u.get('username')}
-                             for t in todos] for u in users}
+                             for t in todos if u.get('id') == t.get('userId')]
+               for u in users}
 
-    with open("todo_all_employees.json", mode="w") as id_json:
-            json.dump(to_dict, id_json)
+    with open("todo_all_employees.json", mode="w") as file_json:
+            json.dump(to_dict, file_json)
