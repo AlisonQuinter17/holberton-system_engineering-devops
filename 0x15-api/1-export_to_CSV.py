@@ -6,7 +6,8 @@ import csv
 
 if __name__ == "__main__":
 
-    todos = requests.get("https://jsonplaceholder.typicode.com/todos").json()
+    todos = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
+                         .format(sys.argv[1])).json()
     users = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                          .format(sys.argv[1])).json()
     _name = users.get('name')
@@ -16,5 +17,4 @@ if __name__ == "__main__":
         f = csv.writer(id_csv, quoting=csv.QUOTE_ALL)
 
         for r in todos:
-            if _id == r.get('userId'):
-                f.writerow([_id, _name, r.get('completed'), r.get('title')])
+            f.writerow([_id, _name, r.get('completed'), r.get('title')])
