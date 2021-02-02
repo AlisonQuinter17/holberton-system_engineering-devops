@@ -10,7 +10,7 @@ if __name__ == "__main__":
                          .format(sys.argv[1])).json()
     users = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                          .format(sys.argv[1])).json()
-    _name = users.get('name')
+    _name = users.get('username')
     _id = users.get('id')
 
     with open('{}.csv'.format(sys.argv[1]), mode='w') as id_csv:
