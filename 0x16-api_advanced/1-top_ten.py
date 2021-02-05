@@ -12,6 +12,6 @@ def top_ten(subreddit):
 
     if (sub.status_code == 200):
         for i in sub.json().get("data").get("children"):
-            print ("{}".format(i.get("data").get("title")))
+            print("{}".format(i.get("data").get("title")))
     else:
-        print (None)
+        print(None)
