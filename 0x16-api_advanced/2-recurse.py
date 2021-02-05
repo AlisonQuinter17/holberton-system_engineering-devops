@@ -7,9 +7,8 @@ import requests
 
 def recurse(subreddit, hot_list=[], after=""):
     """ Recurse it! """
-    sub = requests.get("https://reddit.com/r/{}/hot.json?after={}"
-                       .format(subreddit, after),
-                       headers={"User-Agent": "Custom"})
+    sub = requests.get("https://reddit.com/r/{}/hot.json".format(subreddit),
+                       headers={"User-Agent": "Custom"}, params={"after": after})
 
     if (sub.status_code == 200):
         for i in sub.json().get("data").get("children"):
