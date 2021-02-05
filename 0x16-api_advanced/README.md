@@ -1,7 +1,7 @@
 # API Advanced
 
 A great API to use for some practice is the Reddit API. There’s a lot of endpoints available, many that don’t require any form of authentication, and there’s tons of information to be parsed out and presented. Getting comfortable with API calls now can save you some face during technical interviews and even outside of the job market, you might find personal use cases to make your life a little bit easier.
-
+<img src="https://github.com/AlisonQuinter17/holberton-system_engineering-devops/blob/master/0x16-api_advanced/multimedia/apiadv.png" class="responsive"/>
 RedditAPI: https://www.reddit.com/dev/api/
 
 ### 0. How many subs?
