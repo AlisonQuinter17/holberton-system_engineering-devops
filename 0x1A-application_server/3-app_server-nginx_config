@@ -15,8 +15,23 @@
 #
 server {
         listen 80 default_server;
-location /hbnb_static/ { alias /data/web_static/current/; }
+	location /hbnb_static/ { alias /data/web_static/current/;}
         listen [::]:80 default_server;
+	add_header X-Served-By "$HOSTNAME";
+	error_page 404 /custom_404.html;
+	location = /custom_404.html {root /usr/share/nginx/html; internal;}
+	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+	server_name 35.237.27.173;
+
+	location /airbnb-onepage/ {
+		include proxy_params;
+		proxy_pass http://0.0.0.0:5000;
+	}
+
+	location /airbnb-dynamic/number_odd_or_even/ {
+		include proxy_params;
+		proxy_pass http://0.0.0.0:5001/number_odd_or_even/;
+	}
 
         # SSL configuration
         #
@@ -36,36 +51,11 @@ location /hbnb_static/ { alias /data/web_static/current/; }
 
         root /var/www/html;
 
-	# Add index.php to the list if you are using PHP
+        # Add index.php to the list if you are using PHP
         index index.html index.htm index.nginx-debian.html;
 
         server_name _;
-        add_header X-Served-By "$HOSTNAME";
-        rewrite ^/redirect_me http://www.holbertonschool.com permanent;
-        error_page 404 /custom_404.html;
-        rewrite ^/redirect_me https://media.giphy.com/media/wW95fEq09hOI8/giphy.gif permanent;
-        error_page 404 /custom_404.html;
-        rewrite ^/redirect_me https://media.giphy.com/media/wW95fEq09hOI8/giphy.gif permanent;
-        error_page 404 /custom_404.html;
-        error_page 404 /custom_404.html;
 
-        location = /custom_404.html {
-                root /var/www/html;
-                internal;
-        }
-
-        location /airbnb-onepage {
-                proxy_pass http://0.0.0.0:5000/airbnb-onepage;
-        }
-
-	location /airbnb-dynamic/number_odd_or_even/ {
-                proxy_pass http://localhost:5001/number_odd_or_even/;
-        }
-
-	rewrite ^/redirect_me https://media.giphy.com/media/wW95fEq09hOI8/giphy.gif permanent;
-        error_page 404 /custom_404.html;
-
-        error_page 404 /custom_404.html;
         location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
@@ -83,14 +73,13 @@ location /hbnb_static/ { alias /data/web_static/current/; }
         #       fastcgi_pass unix:/run/php/php7.0-fpm.sock;
         #}
 
-	# deny access to .htaccess files, if Apache's document root
+        # deny access to .htaccess files, if Apache's document root
         # concurs with nginx's one
         #
         #location ~ /\.ht {
         #       deny all;
-	#}
+        #}
 }
-
 
 # Virtual Host configuration for example.com
 #
@@ -110,4 +99,3 @@ location /hbnb_static/ { alias /data/web_static/current/; }
 #               try_files $uri $uri/ =404;
 #       }
 #}
-
